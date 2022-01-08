@@ -25,7 +25,7 @@ def camera_input_on_change():
                     )
                 else:
                     st.write(
-                        "An error occurred processing your input. Please check your inputs and try again."
+                        "An error occurred processing your input. Please check your input and try again."
                     )
 
 
