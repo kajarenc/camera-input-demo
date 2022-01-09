@@ -9,11 +9,11 @@ col_left, _, col_right = st.columns([5, 1, 4])
 
 def camera_input_on_change():
     with col_right:
-        if st.session_state.camerainputfirst:
+        if st.session_state.camera_input_file:
             with st.spinner("Processing..."):
                 r = requests.post(
                     "https://api.deepai.org/api/toonify",
-                    files={"image": st.session_state.camerainputfirst},
+                    files={"image": st.session_state.camera_input_file},
                     headers={"api-key": st.secrets.api_key},
                 )
                 st.text("")
@@ -30,4 +30,4 @@ def camera_input_on_change():
 
 
 with col_left:
-    st.camera_input(label="", key="camerainputfirst", on_change=camera_input_on_change)
+    st.camera_input(label="", key="camera_input_file", on_change=camera_input_on_change)
